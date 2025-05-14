@@ -11,19 +11,25 @@ docker-compose exec php bash
 composer install
 php artisan key:generate
 php artisan migrate --seed
+```
 
 ## ER図
 
+```bash
 ![ER図](./ER.png)
+```
 
 ## 使用技術（実行環境）
 
+```bash
 PHP 7.4
 Laravel 8.83.8
 MySQL 8.0
 Docker / docker-compose
-
+```
 ## URL
 
+```bash
 開発環境：http://localhost/
 phpMyAdmin:http://localhost8080/
+```
