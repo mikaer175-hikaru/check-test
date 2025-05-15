@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\Category;
 
 class FormController extends Controller
 {
@@ -12,7 +13,7 @@ class FormController extends Controller
     public function show()
     {
         $categories = Category::all();
-        return view('contact.form', compact('categories'));
+        return view('form', compact('categories'));
     }
 
     // 確認画面
@@ -21,7 +22,7 @@ class FormController extends Controller
         // validated の方がセキュリティ的に安全
         $data = $request->validated();
 
-        return view('contact.confirm', compact('data'));
+        return view('confirm', compact('data'));
     }
 
     // 送信処理（DB保存やメール送信など）
@@ -36,12 +37,12 @@ class FormController extends Controller
         Contact::create($data);
         
         // 成功後、完了画面へ
-        return redirect()->route('contact.thanks');
+        return redirect()->route('thanks');
     }
 
     // 完了画面
     public function thanks()
     {
-        return view('contact.thanks');
+        return view('thanks');
     }
 }

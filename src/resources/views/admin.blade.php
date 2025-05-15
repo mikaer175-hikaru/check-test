@@ -1,8 +1,8 @@
-<!-- resources/views/admin/contacts/index.blade.php -->
+<!-- resources/views/admin/contacts/admin.blade.php -->
 @extends('layouts.app')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 @endsection
 
 @section('content')

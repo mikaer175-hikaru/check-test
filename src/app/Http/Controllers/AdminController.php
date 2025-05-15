@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 
-class ContactController extends Controller
+class AdminController extends Controller
 {
     public function index(Request $request)
     {
@@ -30,13 +30,13 @@ class ContactController extends Controller
             })
             ->paginate(7);
 
-        return view('admin.contacts.index', compact('contacts'));
+        return view('admin', compact('contacts'));
     }
 
     public function destroy(Contact $contact)
     {
         $contact->delete();
-        return redirect()->route('contacts.index')->with('message', '削除しました');
+        return redirect()->route('admin')->with('message', '削除しました');
     }
     
 }
